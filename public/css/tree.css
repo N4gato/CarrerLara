@@ -1,0 +1,48 @@
+body {
+	background-image: url('../img/bg.png');
+	
+	width: 100%;
+	height: 900px;
+	margin:0px;
+	padding: 0px;
+
+}
+.text-justify{
+	width: 100px;
+	height: 100%;
+	background-color: #555;
+	border-radius: 5px;
+}
+#logo{
+	color: #5cb85c;
+
+}
+.right{
+	float: right;
+}
+.acc{
+	margin-top: 33px;
+background-image: url(https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/features-hero-94580334dbc5e7d4cb4c8d58d43dbe01.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: bottom center;
+padding-top: 35px;
+width: 100%;
+height: 650px;
+font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif !important;
+font-weight: 500;
+	
+
+}
+.subacc{
+	width: 70%;
+	height: 100%;
+	padding-left: 200px;
+	padding-top: 400px;
+}
+
+.taill{
+
+	width: 150px;
+	height: 150px;
+}

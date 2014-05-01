@@ -1,0 +1,86 @@
+# script créé le : Sun Apr 27 12:14:15 WEST 2014 -   syntaxe MySQL ;
+
+# use  VOTRE_BASE_DE_DONNEE ;
+
+DROP TABLE IF EXISTS prof ;
+CREATE TABLE prof (id_p int AUTO_INCREMENT NOT NULL,
+name TEXT,
+prenom TEXT,
+CIN TEXT,
+mail TEXT,
+PRIMARY KEY (id_p) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS cours ;
+CREATE TABLE cours (id_c int AUTO_INCREMENT NOT NULL,
+url TEXT,
+img TEXT,
+categorie TEXT,
+date_deb DATE,
+date_fin DATE,
+type_cours TEXT,
+paye BOOL,
+PRIMARY KEY (id_c) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS comment ;
+CREATE TABLE comment (id_com int AUTO_INCREMENT NOT NULL,
+titre TEXT,
+text TEXT,
+PRIMARY KEY (id_com) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS users ;
+CREATE TABLE users (id_u int AUTO_INCREMENT NOT NULL,
+CNE TEXT,
+password TEXT,
+mail_u TEXT,
+username TEXT,
+remember_Token TEXT,
+updated_at DATE,
+created_at DATE,
+name_u TEXT,
+PRIMARY KEY (id_u) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS shared_cours ;
+CREATE TABLE shared_cours (id_p int AUTO_INCREMENT NOT NULL,
+id_c INT NOT NULL,
+date_shared DATE,
+PRIMARY KEY (id_p,
+ id_c) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS avoir ;
+CREATE TABLE avoir (id_c int AUTO_INCREMENT NOT NULL,
+id_com INT NOT NULL,
+date_com DATE,
+PRIMARY KEY (id_c,
+ id_com) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS inscrit ;
+CREATE TABLE inscrit (id_c int AUTO_INCREMENT NOT NULL,
+id_u INT NOT NULL,
+date_insc DATE,
+PRIMARY KEY (id_c,
+ id_u) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS post ;
+CREATE TABLE post (id_u int AUTO_INCREMENT NOT NULL,
+id_com INT NOT NULL,
+PRIMARY KEY (id_u,
+ id_com) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS message ;
+CREATE TABLE message (id_p int AUTO_INCREMENT NOT NULL,
+id_u INT NOT NULL,
+message TEXT,
+PRIMARY KEY (id_p,
+ id_u) ) ENGINE=InnoDB;
+
+ALTER TABLE shared_cours ADD CONSTRAINT FK_shared_cours_id_p FOREIGN KEY (id_p) REFERENCES prof (id_p);
+
+ALTER TABLE shared_cours ADD CONSTRAINT FK_shared_cours_id_c FOREIGN KEY (id_c) REFERENCES cours (id_c);
+ALTER TABLE avoir ADD CONSTRAINT FK_avoir_id_c FOREIGN KEY (id_c) REFERENCES cours (id_c);
+ALTER TABLE avoir ADD CONSTRAINT FK_avoir_id_com FOREIGN KEY (id_com) REFERENCES comment (id_com);
+ALTER TABLE inscrit ADD CONSTRAINT FK_inscrit_id_c FOREIGN KEY (id_c) REFERENCES cours (id_c);
+ALTER TABLE inscrit ADD CONSTRAINT FK_inscrit_id_u FOREIGN KEY (id_u) REFERENCES users (id_u);
+ALTER TABLE post ADD CONSTRAINT FK_post_id_u FOREIGN KEY (id_u) REFERENCES users (id_u);
+ALTER TABLE post ADD CONSTRAINT FK_post_id_com FOREIGN KEY (id_com) REFERENCES comment (id_com);
+ALTER TABLE message ADD CONSTRAINT FK_message_id_p FOREIGN KEY (id_p) REFERENCES prof (id_p);
+ALTER TABLE message ADD CONSTRAINT FK_message_id_u FOREIGN KEY (id_u) REFERENCES users (id_u);
