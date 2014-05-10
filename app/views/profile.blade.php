@@ -10,6 +10,9 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="../public/css/uikit.min.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
 <link rel="stylesheet" href="../public/css/tree.css">
 
 	<title>Make your Career</title>
@@ -167,45 +170,74 @@
 <br />
 <br />
 <br />
-<div class="col-md-8">
-	<div class="panel panel-primary cours">
-		<div class="panel-heading">
-			<h3 class="panel-title">Videos</h3>
-		</div>
-		<?php 
-	$i=1;
-	while ( $i <= 10) {
-		# code...
-	 ?>
-		<div class="media">
-			<a class="pull-left" href="#">
-				<img class="media-object taill" src="http://upload.wikimedia.org/wikipedia/commons/thumb
-				/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" alt="..."></a>
-			<div class="media-body">
-				<h4 class="media-heading">Media heading</h4>
 
-				<p>blablalalalalalalalalalalalalalalaalalalalalalalalal</p>
-			</div>
-		</div>
-		<?php $i++; } ?></div>
-</div>
-<div class="col-md-4">
-	<div class="panel panel-primary cours">
-		<div class="panel-heading">
-			<h3 class="panel-title">Cours</h3>
-		</div>
-		<?php 
-	$i=1;
-	while ( $i <= 10) {
-		# code...
-	 ?>
-		<div class="panel-body">
-			<a href="#">
-				Link to Cours
-				<?php echo $i ?></a>
-		</div>
-		<?php $i++; } ?></div>
-</div>
+		<div class="container demo-3">
+			<!-- Top Navigation -->
+			<ul class="grid cs-style-3">
+				<li>
+					<figure>
+						<img src="http://winsupersite.com/site-files/winsupersite.com/files/imagecache/galleryformatter_slide_penton/gallery_images/xbox-video-01.jpg" alt="img04" >
+						<figcaption>
+							<h3>Watch Videos tutorial</h3>
+							<span>Nagato</span>
+							<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="http://cdn.windows8freeware.com/wp-content/uploads/2012/03/windows-8-reader-app.png" alt="img01">
+						<figcaption>
+							<h3>Read PDF</h3>
+							<span>Nagato</span>
+							<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="http://www.c-sharpcorner.com/UploadFile/7e39ca/send-message-using-windows-8-messaging-app/Images/Start-Scree-Mess-Windows8.jpg" alt="img06">
+						<figcaption>
+							<h3>Send a Message</h3>
+							<span>Nagato</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="http://winsupersite.com/site-files/winsupersite.com/files/archive/winsupersite.com/content/content/142231/win8_arm_cal1_0.jpg" alt="img02">
+						<figcaption>
+							<h3>Brows your calendar</h3>
+							<span>Nagato</span>
+							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="http://www.icon2s.com/wp-content/uploads/2013/01/iCloud-blue-windows-8-metro-style.png" alt="img05">
+						<figcaption>
+							<h3>Safari</h3>
+							<span>Nagato</span>
+							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="http://www.icon2s.com/wp-content/uploads/2013/01/Home-Network-windows-8-metro-style.png" alt="img03">
+						<figcaption>
+							<h3>Home</h3>
+							<span>Nagato</span>
+							<a href="http://dribbble.com/shots/1117308-Phone">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+			</ul>
+		</div><!-- /container -->
+		<script src="js/toucheffects.js"></script>
+
 </body>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

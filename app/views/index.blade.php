@@ -5,14 +5,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="stylesheet" href="../public/css/uikit.min.css">
+	<link rel="stylesheet" href="../public/css/tree.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/test/style5.css" />
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-	<link rel="stylesheet" href="../public/css/uikit.min.css">
-	<link rel="stylesheet" href="../public/css/tree.css">
+		<script src="../public/js/modernizr.custom.63321.js"></script>
 
 	<title>Make your Career</title>
 </head>
@@ -198,37 +200,37 @@
 
 	<div class="acc">
 
-		<div class="subacc">
-			<!-- --------------------------------------------------------the main-->
-
 			<?php 
 	if (Auth::check()) {
 		
 ?>
-			<div>
-				<div class="fb-share-button" data-href="https://www.facebook.com/otmane.bouayad.9" 
-			data-type="button_count" data-uk-toggle="{target:'#my-id'}"></div>
+<div class="addon">
+				<div class="fleft">
+					<select id="cd-dropdown" class="cd-select">
+						<option value="-1" selected>Ckeck This One</option>
+						<option value="1" class="icon-google-plus">Google Plus</option>
+						<option value="2" class="icon-facebook">Facebook</option>
+						<option value="3" class="icon-twitter">Twitter</option>
+						<option value="4" class="icon-github">GitHub</option>
+					</select>
+				</div>
+</div>
+							<?php 
+}
+ ?>
 
-			</div>
-			<br />
-			<div>
-				<!-- Place this tag where you want the share button to render. -->
-				<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+		<div class="subacc">
+			<!-- --------------------------------------------------------the main-->
 
-				<!-- Place this tag after the last share tag. -->
-				<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-			</div>
 			<?php 
-				}else{
+	if (!Auth::check()) {
+		
 ?>
-			<!-- This is a button toggling the off-canvas sidebar -->
+	
+
+		<!-- This is a button toggling the off-canvas sidebar -->
 			<button type="button" class="btn btn-primary btn-lg" data-uk-offcanvas="{target:'#my-id'}">Register Now</button>
+		</div>
 			<?php 
 }
  ?>
@@ -369,6 +371,21 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.dropdown.js"></script>
+	<script type="text/javascript">
+			
+			$( function() {
+				
+				$( '#cd-dropdown' ).dropdown( {
+					gutter : 5,
+					stack : false,
+					slidingIn : 100
+				} );
+
+			});
+
+		</script>
 <script src="js/uikit.min.js"></script>
 <script src="js/tree.js"></script>
 </html>
