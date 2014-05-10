@@ -112,6 +112,17 @@ Route::get('profile', array('as' => 'profile', function()
     return View::make('profile');
 }));
 
+/*
+*
+* @ route to the user profile
+*/
+
+Route::get('login', array('as' => 'login', function()
+{
+    //
+    return View::make('login');
+}));
+
 
 
 
