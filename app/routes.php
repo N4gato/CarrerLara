@@ -46,7 +46,7 @@ Route::filter('profAuth', function()
    
         if (Auth::user()->type) {
            
-            return View::make('teach');
+            return Redirect::to('teachh');
 
         }else return View::make('learn');
 });
@@ -59,6 +59,8 @@ Route::filter('profAuth', function()
 * @ route to the user video
 */
 Route::get('teach', array('as' => 'teach', 'before' => 'profAuth'));
+
+Route::get('teachh', array('as' => 'teachh','uses'=>'ProfController@showCours'));
 
 
 
@@ -112,6 +114,17 @@ Route::get('profile', array('as' => 'profile', function()
     return View::make('profile');
 }));
 
+/*
+*
+* @ route to the user profile
+*/
+
+Route::get('login', array('as' => 'login', function()
+{
+    //
+    return View::make('login');
+}));
+
 
 
 
@@ -138,6 +151,9 @@ Route::post('registration','UserController@register');
 /* -------------------------------- ProfController ---------------------------------  */
 
 Route::post('AddCours',array ( 'as' => 'AddCours' , 'uses' => 'ProfController@AddCours'))  ;
+Route::post('AddVideo',array ( 'as' => 'AddVideo' , 'uses' => 'ProfController@AddVideo'))  ;
+
+Route::get('addto/{id_c}',array ( 'as' => 'addto' , 'uses' => 'ProfController@addTo'))  ;
 
 
 

@@ -80,21 +80,22 @@ class UserController extends BaseController {
 	public function register(){
 
 
+		$reg_username = Input::get('reg_username');		
 		$reg_name = Input::get('reg_name');
 		$reg_mail = Input::get('reg_mail');
-		$reg_pwd = Input::get('reg_CNE');
-		$reg_username = Input::get('reg_username');		
+		$reg_CNE = Input::get('reg_CNE');
+		$reg_pwd = Input::get('reg_pwd');
 
 		$password = Hash::make($reg_pwd); 
 
 		$user = new User;
 
-		$user->password = $password;
-		$user->name_u = $reg_name;
-		
-		$user->mail_u = $reg_mail;
-		$user->CNE = $reg_pwd;
 		$user->username = $reg_username;
+		$user->name_u = $reg_name;
+		$user->mail_u = $reg_mail;
+		$user->CNE = $reg_CNE;
+		$user->password = $password;
+		
 
 		$user->save();
 		

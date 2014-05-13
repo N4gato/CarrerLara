@@ -20,15 +20,6 @@
 </head>
 <body>
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-  		var js, fjs = d.getElementsByTagName(s)[0];
-  		if (d.getElementById(id)) return;
-  		js = d.createElement(s); js.id = id;
-  		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-
 	<div class="navbar navbar-inverse navbar-fixed-top" >
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -180,14 +171,7 @@
 		<!--The loging Forme -->
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-
-				<form class="navbar-form navbar-right" role="form" method="POST" action="{{ Route('Authentification') }}">
-					<div class="form-group">
-						<input type="text" name="username" placeholder="Username" class="form-control"></div>
-					<div class="form-group">
-						<input type="CNE" name="pwd" placeholder="Password" class="form-control"></div>
-					<button type="submit" name="submit" class="btn btn-success">Sign in</button>
-				</form>
+			<a href="{{ Route('login') }}">SingIn-SingUp</a>
 			</li>
 		</ul>
 		<?php } ?>

@@ -14,7 +14,7 @@
 	<title>Make your Career</title>
 </head>
 	<nav>
-		------------------------------------------------
+		
 		<div class="navbar navbar-inverse navbar-fixed-top" >
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +28,7 @@
 					</button>
 					<a class="navbar-brand" id="logo" href="#">Career</a>
 				</div>
-
+				
 				<!-- --------------------------------------------------------The Nav-->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
@@ -161,13 +161,12 @@
 
 	</div>
 </nav>
-------------------------------------------------
+
 <body>
 
 <br />
 <br />
-<br />
-<br />
+
 <div class="col-md-8">
 	<div class="panel panel-primary cours">
 		<div class="panel-heading">
@@ -193,8 +192,7 @@
 		<br />
 		<div style="width: 75%; float: right;">
 			<form action="{{Route('AddCours')}}" method="POST">
-				<input type="text" name="url" class="form-control" placeholder="URL" >
-				<br />
+
 				<input type="text" name="url_i" class="form-control" placeholder="URL de l'icone">
 				<br />
 				Categorie :
@@ -232,9 +230,66 @@
 			</form>
 		</div>
 	</div>
+</div>
+</div>
 
+<div class="col-md-4">
+	<div class="panel panel-primary cours">
+		<div class="panel-heading">
+			<h3 class="panel-title">Vos cours</h3>
+		</div>
+		
+		<ul >
+<?php 
+if($er){
+ 
+			for ($j = 0 ; $j < $i ; $j++){
+			
+			$help =  $img[$j]  ;
+			$help2 = $id_c[$j] ;
+
+?>
+			<il><img src="{{$help}}" style="width: 100px; heigh: 100px;" ></il>
+			<il> <p>Categorie : {{ $cat[$j] }}</p></il>
+			<a href="#addcours" data-uk-modal>Add a Video to this cours</a>
+			<il> <a href="addto/{{ $help2 }}"> Ajouter un video a ce cours</a></il><br />
+
+			<div class="uk-progress uk-progress uk-progress-danger uk-progress-striped uk-active">
+   				 <div class="uk-progress-bar" style="width: 40%;">40%</div>
+			</div>
+			<hr>
+<?php 
+			}
+}
+ ?>
+		</ul>
+			
+		
+	</div>
 </div>
 </div>
+
+<!-- This is the modal -->
+<div id="addcours" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+					<form action="" method="POST">
+
+						<input type="text" name="url_i" class="form-control" placeholder="URL du video"> 
+						<a href="">  how to generate the URL</a>
+						<br />
+						<br />
+						<br />
+						<input type="text" name="date_deb" class="form-control" value="{{ date("Y/m/d") }}" placeholder="{{ date("Y/m/d") }}">
+						<br />
+						<input type="text" name="dat_fin" class="form-control" placeholder=" Date du fin de cours" id="datepicker">
+						<br />
+						<br />
+						<input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block" >
+						<br />
+					</form>
+		 </div>
+	</div>
 </body>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

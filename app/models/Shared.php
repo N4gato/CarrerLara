@@ -9,6 +9,6 @@ class Shared extends Eloquent {
 	 */
 	protected $table = 'shared_cours';
 
-	protected $primaryKey = 'id_u';
+	protected $primaryKey = 'id_p';
 
  }
