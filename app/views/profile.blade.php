@@ -172,6 +172,8 @@
 <br />
 
 		<div class="container demo-3">
+		<br />
+		<br />
 			<!-- Top Navigation -->
 			<ul class="grid cs-style-3">
 				<li>
@@ -214,33 +216,13 @@
 						</figcaption>
 					</figure>
 				</li>
-				<li>
-					<figure>
-						<img src="http://www.icon2s.com/wp-content/uploads/2013/01/iCloud-blue-windows-8-metro-style.png" alt="img05">
-						<figcaption>
-							<h3>Safari</h3>
-							<span>Nagato</span>
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
-						</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<img src="http://www.icon2s.com/wp-content/uploads/2013/01/Home-Network-windows-8-metro-style.png" alt="img03">
-						<figcaption>
-							<h3>Home</h3>
-							<span>Nagato</span>
-							<a href="http://dribbble.com/shots/1117308-Phone">Take a look</a>
-						</figcaption>
-					</figure>
-				</li>
 			</ul>
 		</div><!-- /container -->
-		<script src="js/toucheffects.js"></script>
 
 </body>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="js/uikit.min.js"></script>
+<script src="js/toucheffects.js"></script>
 </html>
