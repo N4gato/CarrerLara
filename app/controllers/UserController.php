@@ -120,4 +120,33 @@ class UserController extends BaseController {
 		return Redirect::to('profile');
 	}
 
+
+	
+	public function showV(){
+$i=0;
+		$videos = new Video ;
+
+		$video = $videos::all();
+
+	foreach ($video as $vid){
+
+		    $url[$i] = $vid->url;
+		    $created_at = $vid->created_at;
+		    $updated_at = $vid->updated_at;
+		    
+
+
+			
+			$i++;
+
+			}
+
+			
+	return View::make('video')->with('url', $url)->with('created', $created_at)->with('updated', $updated_at)->with('i', $i);
+}
+			
+				
+			
+	
+
 }

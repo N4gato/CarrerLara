@@ -182,7 +182,7 @@
 						<figcaption>
 							<h3>Watch Videos tutorial</h3>
 							<span>Nagato</span>
-							<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+							<a href="{{ Route('showV') }}">Take a look</a>
 						</figcaption>
 					</figure>
 				</li>

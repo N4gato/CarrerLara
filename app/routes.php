@@ -25,7 +25,7 @@
 * @ route to the home
 */
 Route::get('/',array('as' => 'home', function() {
-	
+    
     if (Session::has('username')) {
         $action = 'show';
         return App::make('UserController')->$action();  
@@ -35,7 +35,6 @@ Route::get('/',array('as' => 'home', function() {
         return App::make('UserController')->$action();
     }
 }));
-
 
 
 
@@ -75,6 +74,18 @@ Route::get('learn', array('as' => 'learn', function()
 }));
 
 
+
+/*
+*
+* @ route to the addto
+*/
+
+Route::get('addvideo', array('as' => 'addvideo', function()
+{
+    //
+
+     return View::make('addvideo');
+}));
 
 
 
@@ -138,7 +149,9 @@ Route::post('Authentification' , array( 'as' => 'Authentification' , 'uses'=>'Us
 
 Route::get('logout',array ( 'as' => 'logout' , 'uses' => 'UserController@logout'))	;
 
-Route::post('change',array ( 'as' => 'change' , 'uses' => 'UserController@change'))	;
+Route::post('change',array ( 'as' => 'change' , 'uses' => 'UserController@change')) ;
+
+Route::get('showV',array ( 'as' => 'showV' , 'uses' => 'UserController@showV'))	;
 
 //Route::get('login' , array( 'as' => 'login' , 'uses'=>'UserController@login'));
 
@@ -153,7 +166,8 @@ Route::post('registration','UserController@register');
 Route::post('AddCours',array ( 'as' => 'AddCours' , 'uses' => 'ProfController@AddCours'))  ;
 Route::post('AddVideo',array ( 'as' => 'AddVideo' , 'uses' => 'ProfController@AddVideo'))  ;
 
-Route::get('addto/{id_c}',array ( 'as' => 'addto' , 'uses' => 'ProfController@addTo'))  ;
+Route::get('addv/{id_c}',array ( 'as' => 'addtoo' , 'uses' => 'ProfController@addTo'))  ;
+Route::post('commit',array ( 'as' => 'commit' , 'uses' => 'ProfController@commit'))  ;
 
 
 
