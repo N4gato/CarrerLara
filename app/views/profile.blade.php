@@ -212,7 +212,7 @@
 						<figcaption>
 							<h3>Brows your calendar</h3>
 							<span>Nagato</span>
-							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+							<a href="{{ Route('cal') }}">Take a look</a>
 						</figcaption>
 					</figure>
 				</li>

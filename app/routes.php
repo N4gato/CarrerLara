@@ -73,6 +73,16 @@ Route::get('learn', array('as' => 'learn', function()
     return View::make('learn');
 }));
 
+/*
+*
+* @ route to the user pdf
+*/
+Route::get('cal', array('as' => 'cal', function()
+{
+    //
+    return View::make('cal');
+}));
+
 
 
 /*
@@ -151,7 +161,9 @@ Route::get('logout',array ( 'as' => 'logout' , 'uses' => 'UserController@logout'
 
 Route::post('change',array ( 'as' => 'change' , 'uses' => 'UserController@change')) ;
 
-Route::get('showV',array ( 'as' => 'showV' , 'uses' => 'UserController@showV'))	;
+Route::get('showV',array ( 'as' => 'showV' , 'uses' => 'UserController@showV')) ;
+
+Route::post('addcom/{id_v}',array ( 'as' => 'addcom' , 'uses' => 'UserController@addCom'))	;
 
 //Route::get('login' , array( 'as' => 'login' , 'uses'=>'UserController@login'));
 
