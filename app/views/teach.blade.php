@@ -268,6 +268,66 @@ if($er){
 		
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+<div class="col-md-8">
+	<div class="panel panel-primary cours">
+		<div class="panel-heading">
+			<h3 class="panel-title">Ajouter Un Streaming</h3>
+		</div>
+		<div class="panel-body">
+			<div style="float: left">
+				<script type="text/javascript">if (typeof swfobject == "undefined") {document.write('<script type="text/javascript" src="http://cpanel.hostinger.co.uk/scripts/swfobject.js"><\/script>');}swfobject.registerObject('referralBanner848', '8.0.0');</script>
+			<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="160" height="600" id="referralBanner848">
+				<param name="movie" value="http://www.hostinger.co.uk/banners/en/hostinger-160x600-1.swf?clickTAG=http%3A%2F%2Fapi.hostinger.co.uk%2Fredir%2F3546609" />
+				<!--[if !IE]>
+				-->
+				<object type="application/x-shockwave-flash" data="http://www.hostinger.co.uk/banners/en/hostinger-160x600-1.swf?clickTAG=http%3A%2F%2Fapi.hostinger.co.uk%2Fredir%2F3546609" width="160" height="600">
+					<!--<![endif]-->
+					<a href="http://www.adobe.com/go/getflashplayer">
+						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+					</a>
+					<!--[if !IE]>--></object>
+				<!--<![endif]-->
+			</object>
+		</div>
+		<br />
+		<br />
+		<div style="width: 75%; float: right;">
+			<form action="{{Route('addstream')}}" method="POST">
+
+				<input type="text" name="url_i" class="form-control" placeholder="URL de l'icone">
+				<br />
+				<input type="text" name="url_ss" class="form-control" placeholder="URL du Streaming">
+				<br />
+				
+				
+				<input type="text" name="date_deb" class="form-control" value="{{ date("Y/m/d") }}" placeholder="{{ date("Y/m/d") }}">
+				<br />
+				
+				Reglement :
+				<select name="reglement" id="" class="form-control">
+					<option value="payant" class="form_control">Payant</option>
+					<option value="free" class="form_control">Free</option>
+				</select>
+				<br />
+				<input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block" >
+				<br />
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
 </div>
 
 

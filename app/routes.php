@@ -77,6 +77,16 @@ Route::get('learn', array('as' => 'learn', function()
 *
 * @ route to the user pdf
 */
+Route::get('streaming', array('as' => 'streaming', function()
+{
+    //
+    return View::make('streaming');
+}));
+
+/*
+*
+* @ route to the user pdf
+*/
 Route::get('cal', array('as' => 'cal', function()
 {
     //
@@ -164,6 +174,14 @@ Route::post('change',array ( 'as' => 'change' , 'uses' => 'UserController@change
 Route::get('showV',array ( 'as' => 'showV' , 'uses' => 'UserController@showV')) ;
 
 Route::post('addcom/{id_v}',array ( 'as' => 'addcom' , 'uses' => 'UserController@addCom'))	;
+
+Route::get('showstream',array ( 'as' => 'showstream' , 'uses' => 'UserController@showstream')) ;
+
+Route::get('addcomS/{id}',array ( 'as' => 'addcomS' , 'uses' => 'UserController@addcomS')) ;
+
+Route::post('addstream',array ( 'as' => 'addstream' , 'uses' => 'UserController@addstream')) ;
+
+
 
 //Route::get('login' , array( 'as' => 'login' , 'uses'=>'UserController@login'));
 
