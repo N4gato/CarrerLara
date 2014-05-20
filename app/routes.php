@@ -193,5 +193,14 @@ Route::get('makeAdmin/{id}',array ( 'as' => 'makeAdmin' , 'uses' => 'AdminContro
 
 Route::get('makeProf/{id}',array ( 'as' => 'makeProf' , 'uses' => 'AdminController@makeProf'));
 
+Route::get('supcour/{id}',array ( 'as' => 'supcour' , 'uses' => 'AdminController@supcour'));
+
+Route::get('supvideo/{id}',array ( 'as' => 'supvideo' , 'uses' => 'AdminController@supvideo'));
+
+Route::get('supcom/{id}',array ( 'as' => 'supcom' , 'uses' => 'AdminController@supcom'));
+
+Route::get('revoc/{id}',array ( 'as' => 'revoc' , 'uses' => 'AdminController@revocprof'));
+
+Route::get('revocadmin/{id}',array ( 'as' => 'revocadmin' , 'uses' => 'AdminController@revocadmin'));
 
 

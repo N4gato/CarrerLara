@@ -56,6 +56,7 @@
 
 	$users = User::where('type', '=', 0 )->get();
 ?>
+<h2>Gestion des Utilisateur</h2>
 
     <table  class="table table-striped"	>
     	<tr>
@@ -83,6 +84,193 @@
     </table>
 
 </div>
+
+<div>
+<?php 
+
+	$cours = Cours::all();
+?>
+<h2>Gestion des cours</h2>
+   <table  class="table table-striped"	>
+    	<tr>
+			<td>#ID</td>
+    		<td>Categorie </td>
+			<td>date_Debut</td>
+			<td>date_Fin</td>
+			<td>Type</td>
+    		<td>Created at</td>
+    		<td>Updated at</td>
+    		<td>Suprimer</td>
+    	</tr>
+
+ @foreach ($cours as $cour)
+<tr>
+		<td>{{ $cour->id_c }}</td>	
+		<td>{{ $cour->categorie }}</td>
+		<td>{{ $cour->date_deb }}</td>		
+		<td>{{ $cour->date_fin }}</td>		
+		<td>{{ $cour->type_cours }}</td>		
+		<td>{{ $cour->created_at }}</td>
+		<td>{{ $cour->updated_at }}</td>	
+		<td><a href="supcour/{{ $cour->id_c }}">Suprimer</a></td>
+		
+    </tr>
+@endforeach
+
+    </table>
+</div>
+
+
+
+
+
+
+
+
+<div>
+<?php 
+
+	$videos = Video::all();
+?>
+<h2>Gestion des Video</h2>
+   <table  class="table table-striped"	>
+    	<tr>
+			<td>#ID</td>
+    		<td>id_c </td>
+	 		<td>Created at</td>
+    		<td>Updated at</td>
+    		<td>Suprimer</td>
+    	</tr>
+
+ @foreach ($videos as $video)
+<tr>
+		<td>{{ $video->id_v }}</td>	
+		<td>{{ $video->id_c }}</td>	
+		<td>{{ $video->created_at }}</td>
+		<td>{{ $video->updated_at }}</td>	
+		<td><a href="supvideo/{{ $video->id_v }}">Suprimer</a></td>
+		
+    </tr>
+@endforeach
+
+    </table>
+</div>
+
+
+
+
+
+<div>
+<?php 
+
+	$coms = Comment::all();
+?>
+<h2>Gestion des Comment</h2>
+   <table  class="table table-striped"	>
+    	<tr>
+			<td>#ID</td>
+    		<td>id_c </td>
+    		<td>Comment </td>
+    		<td>Poster </td>
+	 		<td>Created at</td>
+    		<td>Updated at</td>
+    		<td>Suprimer</td>
+    	</tr>
+
+ @foreach ($coms as $com)
+<tr>
+		<td>{{ $com->id_com }}</td>	
+		<td>{{ $com->id_v }}</td>	
+		<td>{{ $com->comm }}</td>
+		<td>{{ $com->poster }}</td>
+
+		<td>{{ $com->created_at }}</td>
+		<td>{{ $com->updated_at }}</td>	
+		<td><a href="supcom/{{ $com->id_com }}">Suprimer</a></td>
+		
+    </tr>
+@endforeach
+
+    </table>
+</div>
+
+
+<div>
+<?php 
+
+	$profs = Prof::all();
+?>
+<h2>Gestion des Prof</h2>
+   <table  class="table table-striped"	>
+    	<tr>
+			<td>#ID</td>
+    		<td>Name </td>
+    		<td>Prenom </td>
+    		<td>CIN </td>
+    		<td>Mail </td>
+	 		<td>Created at</td>
+    		<td>Updated at</td>
+    		<td>Action</td>
+    	</tr>
+
+ @foreach ($profs as $prof)
+<tr>
+		<td>{{ $prof->id_p }}</td>	
+		<td>{{ $prof->name }}</td>	
+		<td>{{ $prof->prenom }}</td>
+		<td>{{ $prof->CIN }}</td>
+		<td>{{ $prof->mail_p }}</td>
+
+		<td>{{ $prof->created_at }}</td>
+		<td>{{ $prof->updated_at }}</td>	
+		<td><a href="revocprof/{{ $prof->id_com }}">Suprimer</a></td>
+		
+    </tr>
+@endforeach
+
+    </table>
+</div>
+
+<div>
+<?php 
+
+	$users = User::where('admin' , '=' , 1)->get();
+?>
+<h2>Gestion des Admin</h2>
+   <table  class="table table-striped"	>
+    	<tr>
+			<td>#ID</td>
+    		<td>Name </td>
+    		<td>Prenom </td>
+    		<td>CIN </td>
+    		<td>Mail </td>
+	 		<td>Created at</td>
+    		<td>Updated at</td>
+    		<td>Action</td>
+    	</tr>
+
+ @foreach ($users as $user)
+<tr>
+		<td>{{ $user->id_u }}</td>	
+		<td>{{ $user->name_u }}</td>	
+		<td>{{ $user->username}}</td>
+		<td>{{ $user->CIN }}</td>
+		<td>{{ $user->mail_u }}</td>
+
+		<td>{{ $user->created_at }}</td>
+		<td>{{ $user->updated_at }}</td>	
+		<td><a href="revocadmin/{{ $user->id_u }}">Revoc</a></td>
+		
+    </tr>
+@endforeach
+
+    </table>
+</div>
+
+
+
+
+
 
 </body>
 </html>
