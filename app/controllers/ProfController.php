@@ -46,7 +46,30 @@ class ProfController extends BaseController {
 		Session::put('id_cour_add', $id_c);
 		
 
-		return "hello ta bien arriver".$id_c  ;
+		return Redirect::to('addvideo') ;
+	}
+
+	public function commit(){
+
+		$id_c = Session::get('id_cour_add');
+
+
+		$url_v =Input::get('url_v');
+		$prog =Input::get('prog');
+		
+
+		$video = new Video;
+		$video->id_c = $id_c  ;
+		$video->url = $url_v  ;
+
+		$video->save();
+
+		//$cours = new Cours::find($id_c);
+		$cours = Cours::where('id_c', '=', $id_c)->update(array('progress' => $prog));
+		//$cours->progress = $prog;
+		//$cours->save();
+
+		return Redirect::to('profile');
 	}
 
 	
@@ -74,6 +97,7 @@ class ProfController extends BaseController {
 		    $img[$i] = $cour->img;
 		    $cat[$i] = $cour->categorie;
 		    $id_c[$i] = $cour->id_c;
+		    $progress[$i] = $cour->progress;
 
 
 			
@@ -85,7 +109,7 @@ class ProfController extends BaseController {
 		}
 			try {
 				
-					return View::make('teach')->with('img', $img)->with('cat' , $cat)->with('i' , $i)->with('er' , 1)->with('id_c' , $id_c);	
+					return View::make('teach')->with('img', $img)->with('cat' , $cat)->with('i' , $i)->with('er' , 1)->with('id_c' , $id_c)->with('progress' , $progress);	
 			} catch (Exception $e) {
 					
 							return View::make('teach')->with('er', 1)->with('i' , 0);

@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="../public/css/uikit.min.css">
-	<link rel="stylesheet" href="../public/css/tree.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/test/style5.css" />
 
 	<!-- Latest compiled and minified CSS -->
@@ -14,6 +13,7 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../public/css/tree.css">
 		<script src="../public/js/modernizr.custom.63321.js"></script>
 
 	<title>Make your Career</title>
@@ -212,8 +212,9 @@
 ?>
 	
 
-		<!-- This is a button toggling the off-canvas sidebar -->
+		<!-- This is a button toggling the off-canvas sidebar 
 			<button type="button" class="btn btn-primary btn-lg" data-uk-offcanvas="{target:'#my-id'}">Register Now</button>
+		-->
 		</div>
 			<?php 
 }

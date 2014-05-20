@@ -182,17 +182,17 @@
 						<figcaption>
 							<h3>Watch Videos tutorial</h3>
 							<span>Nagato</span>
-							<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
+							<a href="{{ Route('showV') }}">Take a look</a>
 						</figcaption>
 					</figure>
 				</li>
 				<li>
 					<figure>
-						<img src="http://cdn.windows8freeware.com/wp-content/uploads/2012/03/windows-8-reader-app.png" alt="img01">
+						<img src="http://www.actutime.com/wp-content/uploads/2013/02/skydrive-4.png" alt="img01">
 						<figcaption>
-							<h3>Read PDF</h3>
+							<h3>Add a RealTime Conversation</h3>
 							<span>Nagato</span>
-							<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+							<a href="{{ Route('showstream') }}">Take a look</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -212,7 +212,7 @@
 						<figcaption>
 							<h3>Brows your calendar</h3>
 							<span>Nagato</span>
-							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+							<a href="{{ Route('cal') }}">Take a look</a>
 						</figcaption>
 					</figure>
 				</li>

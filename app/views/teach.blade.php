@@ -247,15 +247,16 @@ if($er){
 			
 			$help =  $img[$j]  ;
 			$help2 = $id_c[$j] ;
+			$progggg =  $progress[$j];
 
 ?>
 			<il><img src="{{$help}}" style="width: 100px; heigh: 100px;" ></il>
 			<il> <p>Categorie : {{ $cat[$j] }}</p></il>
-			<a href="#addcours" data-uk-modal>Add a Video to this cours</a>
-			<il> <a href="addto/{{ $help2 }}"> Ajouter un video a ce cours</a></il><br />
+			
+			<il> <a href="addv/{{ $help2 }}"> Ajouter un video a ce cours</a></il><br />
 
 			<div class="uk-progress uk-progress uk-progress-danger uk-progress-striped uk-active">
-   				 <div class="uk-progress-bar" style="width: 40%;">40%</div>
+   				 <div class="uk-progress-bar" style="width: {{ $progggg }}%;">{{ $progggg }}%</div>
 			</div>
 			<hr>
 <?php 
@@ -267,29 +268,69 @@ if($er){
 		
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+<div class="col-md-8">
+	<div class="panel panel-primary cours">
+		<div class="panel-heading">
+			<h3 class="panel-title">Ajouter Un Streaming</h3>
+		</div>
+		<div class="panel-body">
+			<div style="float: left">
+				<script type="text/javascript">if (typeof swfobject == "undefined") {document.write('<script type="text/javascript" src="http://cpanel.hostinger.co.uk/scripts/swfobject.js"><\/script>');}swfobject.registerObject('referralBanner848', '8.0.0');</script>
+			<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="160" height="600" id="referralBanner848">
+				<param name="movie" value="http://www.hostinger.co.uk/banners/en/hostinger-160x600-1.swf?clickTAG=http%3A%2F%2Fapi.hostinger.co.uk%2Fredir%2F3546609" />
+				<!--[if !IE]>
+				-->
+				<object type="application/x-shockwave-flash" data="http://www.hostinger.co.uk/banners/en/hostinger-160x600-1.swf?clickTAG=http%3A%2F%2Fapi.hostinger.co.uk%2Fredir%2F3546609" width="160" height="600">
+					<!--<![endif]-->
+					<a href="http://www.adobe.com/go/getflashplayer">
+						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+					</a>
+					<!--[if !IE]>--></object>
+				<!--<![endif]-->
+			</object>
+		</div>
+		<br />
+		<br />
+		<div style="width: 75%; float: right;">
+			<form action="{{Route('addstream')}}" method="POST">
+
+				<input type="text" name="url_i" class="form-control" placeholder="URL de l'icone">
+				<br />
+				<input type="text" name="url_ss" class="form-control" placeholder="URL du Streaming">
+				<br />
+				
+				
+				<input type="text" name="date_deb" class="form-control" value="{{ date("Y/m/d") }}" placeholder="{{ date("Y/m/d") }}">
+				<br />
+				
+				Reglement :
+				<select name="reglement" id="" class="form-control">
+					<option value="payant" class="form_control">Payant</option>
+					<option value="free" class="form_control">Free</option>
+				</select>
+				<br />
+				<input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block" >
+				<br />
+			</form>
+		</div>
+	</div>
 </div>
 
-<!-- This is the modal -->
-<div id="addcours" class="uk-modal">
-    <div class="uk-modal-dialog">
-        <a class="uk-modal-close uk-close"></a>
-					<form action="" method="POST">
 
-						<input type="text" name="url_i" class="form-control" placeholder="URL du video"> 
-						<a href="">  how to generate the URL</a>
-						<br />
-						<br />
-						<br />
-						<input type="text" name="date_deb" class="form-control" value="{{ date("Y/m/d") }}" placeholder="{{ date("Y/m/d") }}">
-						<br />
-						<input type="text" name="dat_fin" class="form-control" placeholder=" Date du fin de cours" id="datepicker">
-						<br />
-						<br />
-						<input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block" >
-						<br />
-					</form>
-		 </div>
-	</div>
+
+
+</div>
+
+
 </body>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

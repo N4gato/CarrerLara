@@ -34,4 +34,65 @@ class AdminController extends BaseController {
 	}
 
 
+	public function supcour($id){
+
+	$affectedRows = Shared::where('id_c', '=', $id)->delete();
+	
+	$cour = Cours::find($id);
+	$cour->delete();
+
+	//$share = new Shared ;
+
+		return Redirect::to('Admin');
+	}
+
+	public function supvideo($id){
+
+	
+	$video = Cours::find($id);
+	$video->delete();
+
+	//$share = new Shared ;
+
+		return Redirect::to('Admin');
+	}
+
+	public function supcom($id){
+
+	
+	$com = Comment::find($id);
+	$com->delete();
+
+	//$share = new Shared ;
+
+		return Redirect::to('Admin');
+	}
+
+	public function revocprof($id){
+
+	
+	$prof = Prof::find($id);
+	$prof->delete();
+
+	$user = User::find($id);
+	$user->type = 0;
+	$user->save();
+
+	//$share = new Shared ;
+
+		return Redirect::to('Admin');
+	}
+
+	public function revocadmin($id){
+
+	
+	$user = User::find($id);
+	$user->admin = 0;
+	$user->save();
+	//$share = new Shared ;
+
+		return Redirect::to('Admin');
+	}
+
+
 }
