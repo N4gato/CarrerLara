@@ -173,51 +173,55 @@ class UserController extends BaseController {
 
 
 	public function showstream(){
-	$i=0;
+	$l=0;
+		
 		$stream = new Stream ;
-		//$com = new Comment ;
+		//$comS = new CommentS ;
 
 
 		$streams = $stream::all();
 
-	foreach ($streams as $str){
+	foreach ($streams as $streamm){
 
-		    $url[$i] = $str->url_s;
-		    $prof[$i] = $str->name_p;
+		    $url[$l] = $streamm->url_s;
+		    $id_s[$l] = $streamm->id_s;
 
 		   // DB::insert('insert into users (id, name) values (?, ?)', array(1, 'Dayle'));
 		   //	$comms[$i] = DB::select('select * from comment where id_v = ? order by id_com DESC'  , array($vid->id_v));
-		   	$comms[$i] = Comment::where('id_v', '=', $vid->id_v)->orderBy('id_com', 'desc')->take(7)->get();
+		   	$comms[$l] = CommentS::where('id_s', '=', $streamm->id_s)->orderBy('id_comS', 'desc')->take(7)->get();
 
 
-		    $created_at[$i] = $vid->created_at;
-		    $updated_at[$i] = $vid->updated_at;
+		    $created_at[$l] = $streamm->created_at;
+		    $updated_at[$l] = $streamm->updated_at;
 
 
 			
-			$i++;
+			$l++;
 
-			}
+	}
 
 		    
 			
-	return View::make('video')->with('comms', $comms)->with('id_v', $id_v)->with('url', $url)->with('created', $created_at)->with('updated', $updated_at)->with('i', $i);
-	//var_dump($comms->comm);
-	}
+			return View::make('streaming')->with('comms', $comms)->with('id_s', $id_s)->with('url', $url)->with('created', $created_at)->with('lil', $l)->with('updated', $updated_at);
+			//var_dump($comms->comm);
+	//return "Heloooo";
+		}
+
+
 			
 				
-	public function addcomS($id_v){
-		$comm = Input::get('com');	
+	public function addcomS($id){
+		$comm = Input::get('comS');	
 		
 
-		$com = new Comment ;
-		$com->poster = Auth::user()->username;
-		$com->id_v = $id_v;
-		$com->comm = $comm;
-		$com->save();
+		$comS = new CommentS ;
+		$comS->poster = Auth::user()->username;
+		$comS->id_s = $id;
+		$comS->comms = $comm;
+		$comS->save();
 
 
-		return Redirect::to('showV');
+		return Redirect::to('showstream');
 
 	}
 

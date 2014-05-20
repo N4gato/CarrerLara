@@ -192,7 +192,7 @@
 						<figcaption>
 							<h3>Add a RealTime Conversation</h3>
 							<span>Nagato</span>
-							<a href="{{ Route('streaming') }}">Take a look</a>
+							<a href="{{ Route('showstream') }}">Take a look</a>
 						</figcaption>
 					</figure>
 				</li>

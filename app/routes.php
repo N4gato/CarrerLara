@@ -177,7 +177,7 @@ Route::post('addcom/{id_v}',array ( 'as' => 'addcom' , 'uses' => 'UserController
 
 Route::get('showstream',array ( 'as' => 'showstream' , 'uses' => 'UserController@showstream')) ;
 
-Route::get('addcomS/{id}',array ( 'as' => 'addcomS' , 'uses' => 'UserController@addcomS')) ;
+Route::post('addcomS/{id}',array ( 'as' => 'addcomS' , 'uses' => 'UserController@addcomS')) ;
 
 Route::post('addstream',array ( 'as' => 'addstream' , 'uses' => 'UserController@addstream')) ;
 

@@ -20,6 +20,7 @@
 	
 	.vid{
 		margin: 50px;
+		margin-top: 10px;
 		float: left;
 
 	}
@@ -69,7 +70,7 @@
 
 <body>
 		<?php 
-		for ($j=0; $j < $i; $j++) { 
+		for ($j=0; $j < $lil; $j++) { 
 			# code...
 
 		 ?>
@@ -86,20 +87,20 @@
 				<?php 
 					# code...
 				$commm = $comms[$j];
-				$i = 1;
+				
 				foreach ($commm as $data)
 				{
-				    echo "<p><kbd>".$data->poster."</kbd> - ".$data->comm."</p>";
+				    echo "<p><kbd>".$data->poster."</kbd> - ".$data->comms."</p>";
 				    echo "<hr>";
-				    $i++;
+				    
 				}
 				
 				 ?>
 			</div>
 			<div class="add" >
-					<form method="POST" action="addcom/{{$id_v[$j]}}">
+					<form method="POST" action="addcomS/{{$id_s[$j]}}">
 						<input type="text" class="form-control" value="{{ Auth::user()->username }}"><br />
-						<textarea name="com" class="form-control" rows="15"></textarea><br />
+						<textarea name="comS" class="form-control" rows="15"></textarea><br />
 						<button type="submit" class="btn btn-default">Comment</button>
 					</form>
 			</div>
